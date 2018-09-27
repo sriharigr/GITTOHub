@@ -1,0 +1,78 @@
+mat-card{
+margin: 15px;
+}  
+.example-card {
+    min-width: 350px;
+    padding: 2em;
+  }
+  
+  .navbar-brand .example-header-image {
+    background-image: url('../../assets/flux_evolvus-logo.png');  
+  }  
+  .example-header-image {
+    background-image: url('../../assets/favicon.ico'); 
+    background-size: cover;  
+   
+  }
+  .fa-clone{  
+      cursor: pointer;
+  }
+  button{
+      margin-right: 15px;
+  }
+  .search  mat-form-field{
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+
+  }
+  .ellipsis {
+    max-width: 20em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+.example-card:hover{
+    box-shadow: 5px 5px 30px  grey;
+
+}
+.fa-search{
+    font-size: 15px;
+}
+.fa-clone:hover{
+    color: blue;
+}
+
+.user-exist-message{
+    padding-top: 0;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;   
+    font-weight: lighter;  
+    color: red; 
+    }   
+    .transparent-circle {
+        background-color: rgba(204, 0, 102, 0);
+        border: 5px solid #ff8500 ;
+        height:120px;
+        width:120px;
+       border-radius:75px;
+       margin-left: 15px;
+
+    }
+
+    .transparent-circle:hover{
+        box-shadow: 5px 5px 30px  grey;
+
+    }
+    .transparent-circle p{
+        position: relative;
+        bottom: -12px; 
+        font-size:40px;
+        color:#2373a3;  
+        left: -2px;
+        font-family: 'Quicksand', sans-serif;
+    }
+    .transparent-circle h6{
+        position: relative;
+        bottom: 10px; 
+        left: -2px;
+    }

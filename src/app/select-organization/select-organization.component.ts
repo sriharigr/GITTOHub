@@ -1,6 +1,6 @@
 import { RepoServiceService } from './../repo-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-select-organization',
   templateUrl: './select-organization.component.html',
@@ -14,18 +14,31 @@ export class SelectOrganizationComponent implements OnInit {
   orgsImgUrl="";     
   orgsName="";
   orgsData: Object;
-
-  constructor(private repoService: RepoServiceService, private router: Router) { }
+  validResponse: boolean = false;
+  repoTopics: Object[] = [];
+  constructor(private repoService: RepoServiceService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    if(this.orgsName = this.route.snapshot.params['org']){
+      this.validResponse = true;
+      if(this.router.url == '/org/'+this.orgsName){
+        this.search();
+       }
+      }
+      this.repoService.topicsData.subscribe((response)=>{
+      this.repoTopics = response;
+      });
   }
 search(){
+  this.validResponse = false;
   this.repoService.getOrgsData(this.orgsName).subscribe((response: any)=>{
     if(response){
           this.orgsImgUrl = response.avatar_url;
           this.orgsData = response;
           this.noOrgs = false;
-          this.repoService.orgsData.next(response); 
+          this.repoService.orgsData.next(response);
+          this.validResponse = true; 
+          this.router.navigate(['org', this.orgsName]);
     }
   },(err)=>{
     if(err){
@@ -39,7 +52,15 @@ viewRepositories(){
   this.router.navigate([this.orgsName+'/repositories']);
 }
 
+clearSearch(){
+  this.validResponse = false;
+}
+
 viewUsers(){
+
+}
+
+getTopicBasedRepos(){
 
 }
 }

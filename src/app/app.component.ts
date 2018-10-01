@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { RepoServiceService } from './repo-service.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit{
   orgsImgUrl: string ="";  
   orgsName: string = "";  
   orgsNotSelected: boolean = true;
-constructor(private repoService: RepoServiceService){
+constructor(private repoService: RepoServiceService, private router: Router){
 
 }  
  ngOnInit(){
@@ -20,7 +21,7 @@ constructor(private repoService: RepoServiceService){
      if(response!=null){
       this.orgsData = response;
       this.orgsImgUrl = response.avatar_url;
-      this.orgsName = response.name;
+      this.orgsName = response.name; 
       this.orgsNotSelected = false;
      }else{
       this.orgsNotSelected = true; 
@@ -30,6 +31,9 @@ constructor(private repoService: RepoServiceService){
 }
  
 fork(){
-  window.open('https://github.com/sriharigr/Organization_Repos_GitHub');
+  window.open('https://github.com/sriharigr/GITTOHub'); 
+}
+home(){
+  this.router.navigate(['']);
 }
 }

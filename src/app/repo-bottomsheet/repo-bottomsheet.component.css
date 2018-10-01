@@ -3,4 +3,5 @@ mat-icon{
   cursor: pointer; 
 }  
 mat-card{
+  z-index: inherit;
 }   

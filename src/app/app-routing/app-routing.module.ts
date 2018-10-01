@@ -13,6 +13,10 @@ const routes: Routes =[
     component: SelectOrganizationComponent, pathMatch: 'full'
 },  
 {
+  path: "org/:org", 
+  component: SelectOrganizationComponent
+}, 
+{
   path: ":id/repositories", 
   component: DisplayReposComponent
 },

@@ -3,6 +3,7 @@
 }
 .navbar-dark{
     font-family: 'Quicksand', sans-serif;
+    z-index: inherit;
 }  
 .navbar-light h6{
     color: black;
@@ -16,3 +17,10 @@
 .github-fork{
 cursor: pointer;  
 }  
+.gittohub-profile-name{
+margin-top: 15px;
+}
+.badge-info{
+    margin-left: 5px;
+    cursor: pointer;  
+}

@@ -5,3 +5,6 @@ label{
     font-size: 20px;
     margin-top: 5em; 
 }
+.badge-info{
+cursor: pointer;  
+}

@@ -25,27 +25,25 @@ export class DisplayReposComponent implements OnInit {
   
   ngOnInit() {
      this.orgsName = "" + this.route.snapshot.params['id'];  
-    this.repoService.getOrgsData(this.orgsName).subscribe((response: any)=>{
-      this.repoService.getAllRepoData(this.orgsName, this.per_page).subscribe((response: any)=>{
-        this.responseObtained = true;
-        this.repoData = response;
-        });
+
         this.repoService.getOrgsData(this.orgsName).subscribe((response: any)=>{
           if(response){
                 this.orgsData = response;
                 this.totalRepos = response.public_repos; 
     
+                this.repoService.getAllRepoData(this.orgsName, this.per_page).subscribe((response: any)=>{
+                  this.responseObtained = true;
+                  this.repoData = response;
+                  });
           }
         },(err)=>{
           if(err){
-            if(err.status==404){
-              
+            if(err.status==404){  
+              this.router.navigate([this.orgsName+'/not-found']);
+
             }
           }
         })
-    }, (err)=>{
-      this.router.navigate(['not-found']); 
-    })
 
   }
 repoData: any[]=[];

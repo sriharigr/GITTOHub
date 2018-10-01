@@ -13,7 +13,6 @@
 <h4 align="left">About</h4>
 
 <p align="left">Built using Angular 6 and GitHub's Open APIs</p>
-<br>
 
 <p>A Test Project. Search a Public Organization on GitHub. View all Public Repositories. Copy Clone URL</p>
 <p>The only thing it does which GitHub doesn't is to concat "git clone" with GitHub Clone URL. Oops! #Shame</p>

@@ -1,8 +1,27 @@
 
 <div class="container-fluid">
-    <nav class="navbar navbar-light bg-light">
-        <img src="../../assets/flux_evolvus-logo.png" width="110" height="35" class="d-inline-block align-top" alt="">
-      Evolvus GitHub Repositories
+    <nav class="navbar navbar-light bg-light" >
+        <div class="supli-image" *ngIf="orgsImgUrl==''">
+         {{ Orgs <i class="fa fa-camera"></i>  }}
+        </div>      
+        <img src="{{orgsImgUrl}}"  width="auto" height="35" class="d-inline-block align-top" alt="">
+        <label align="center" style="color: #85144b; font-weight:bold;">GITTOHub</label> 
+        
+        <label for="" *ngIf="!orgsNotSelected">      {{orgsName | titlecase}} GITTOHub Profile <i class="fa fa-github"></i>  
+          </label>   
     </nav>
-        <router-outlet></router-outlet>
-  </div>
+        <router-outlet></router-outlet><br>  
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom navbar-right col-md-12" >
+<span class="description">     
+   
+   Made with Angular and GitHub Open APIs and yeah a bit of  <i class="fa fa-heart"></i>  - GITTOHub
+    
+
+</span>
+  
+        
+
+           <span class="badge badge-primary github-fork" (click)="fork()">Fork <i class="fa fa-github"></i></span>
+
+        </nav>
+  </div>  

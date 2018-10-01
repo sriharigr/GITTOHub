@@ -1,0 +1,18 @@
+.navbar-light{
+    font-family: 'Quicksand', sans-serif;
+}
+.navbar-dark{
+    font-family: 'Quicksand', sans-serif;
+}  
+.navbar-light h6{
+    color: black;
+}
+
+
+.navbar-dark .description{  
+    margin-right: 10px; 
+    color: white;
+}    
+.github-fork{
+cursor: pointer;  
+}  

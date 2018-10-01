@@ -1,4 +1,6 @@
-.example-header-image {
-    background-image: url('../../assets/favicon.ico');  
-    background-size: cover;
-  }
+
+mat-icon{
+  cursor: pointer; 
+}  
+mat-card{
+}   

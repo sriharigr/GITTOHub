@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RepoViewComponent } from './repo-view.component';
+import { SelectOrganizationComponent } from './select-organization.component';
 
-describe('RepoViewComponent', () => {
-  let component: RepoViewComponent;
-  let fixture: ComponentFixture<RepoViewComponent>;
+describe('SelectOrganizationComponent', () => {
+  let component: SelectOrganizationComponent;
+  let fixture: ComponentFixture<SelectOrganizationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepoViewComponent ]
+      declarations: [ SelectOrganizationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RepoViewComponent);
+    fixture = TestBed.createComponent(SelectOrganizationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,19 +1,12 @@
 mat-card{
-margin: 15px;
+margin: 15px;  
 }  
 .example-card {
     min-width: 350px;
     padding: 2em;
   }
+
   
-  .navbar-brand .example-header-image {
-    background-image: url('../../assets/flux_evolvus-logo.png');  
-  }  
-  .example-header-image {
-    background-image: url('../../assets/favicon.ico'); 
-    background-size: cover;  
-   
-  }
   .fa-clone{  
       cursor: pointer;
   }
@@ -33,6 +26,8 @@ margin: 15px;
 }
 .example-card:hover{
     box-shadow: 5px 5px 30px  grey;
+    border:1px solid black;    
+    border-radius: 10px;
 
 }
 .fa-search{
@@ -75,4 +70,9 @@ margin: 15px;
         position: relative;
         bottom: 10px; 
         left: -2px;
+    }
+
+    .view-statistics {
+        font-family: 'Quicksand', sans-serif;
+
     }

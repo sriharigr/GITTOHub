@@ -11,6 +11,8 @@ export class RepoBottomsheetComponent implements OnInit {
 
   repoUrl: string = "";
   repository: any = {};
+  orgsData: any;
+  orgsImgUrl:string = "";
   constructor(private repoService: RepoServiceService,private bottomSheetRef: MatBottomSheetRef<RepoBottomsheetComponent>
   ) { }
   
@@ -20,16 +22,28 @@ export class RepoBottomsheetComponent implements OnInit {
      if(this.repoUrl!=""){
       this.repoService.getOneRepoData(this.repoUrl).subscribe((response: any)=>{
         this.repository = response;
-        console.log(this.repository);  
-      })
+       })
     }
     });
     this.repoService.openRepo.subscribe((event: MouseEvent)=>{
       this.openLink(event);
-    })  
+    });
+    
+    this.orgsData = this.repoService.orgsData.subscribe((response: any)=>{
+      if(response!=null){
+        this.orgsData = response;  
+        this.orgsImgUrl = response.avatar_url;
+      }
+
+    })
   }
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
     event.preventDefault();
+  }
+
+  showGitHubPage(){
+    window.open(this.repository.html_url);  
+
   }
 }

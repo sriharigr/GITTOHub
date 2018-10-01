@@ -2,7 +2,7 @@
   <br>
   <div class="search col-md-6" align="center">
     <mat-form-field>
-      <input matInput placeholder="Search Evolvus Repositories" [(ngModel)]="searchText">
+      <input matInput placeholder="Search {{orgsName | titlecase}} Repositories" [(ngModel)]="searchText">
       <mat-icon matSuffix align="right">
         <i class="fa fa-search"></i>
       </mat-icon>
@@ -16,10 +16,15 @@
   </div>
 
   <div class="col-md-12">
+      <div class="view-statistics col-md-11" align="right"> 
+          Viewing {{per_page}} out of {{totalRepos}} Repositories   
+        </div>  
     <div class="row">
       <mat-card class="example-card col-md-3" *ngFor="let repo of repoData | searchRepo : searchText; let i=index">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
+          <div mat-card-avatar class="example-header-image">
+              <img src="{{orgsData?.avatar_url}}"  width="auto" height="35" class="d-inline-block align-top" alt="">
+          </div>
           <mat-card-title>{{repo.full_name}}</mat-card-title>
           <mat-card-subtitle>{{repo.name}}</mat-card-subtitle>
         </mat-card-header>
@@ -37,7 +42,13 @@
           </mat-icon>
         </mat-card-actions>
       </mat-card>
+
     </div>
+    <div class="view-more" align="center">
+      <button  color='warn' mat-raised-button (click)="viewMoreRepositories()" *ngIf="totalRepos > per_page">More</button>
+ 
+    </div>  
+
     <label class="user-exist-message col-md-12" *ngIf="(repoData | searchRepo : searchText).length ==0">
       <i class="fa fa-exclamation-circle"></i> Oops! We couldn't find any such Repository</label>
   </div>

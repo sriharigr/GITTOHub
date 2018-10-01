@@ -1,0 +1,23 @@
+label{
+    font-family: 'Quicksand', sans-serif;
+}
+.randomString{
+    font-size: 20px;
+}
+.user-exist-message{
+    padding-top: 0;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;   
+    font-weight: lighter;  
+    color: red; 
+    } 
+    .organization-search{
+        position: relative;
+        top: 5em;
+    }
+    .orgs-details  {
+        position: relative;
+        top: 7em;
+        /* left: 20em;   */
+    }
+      

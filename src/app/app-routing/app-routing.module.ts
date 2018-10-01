@@ -1,19 +1,21 @@
+import { SelectOrganizationComponent } from './../select-organization/select-organization.component';
 import { NotFoundComponent } from './../not-found/not-found.component';
-import { RepoViewComponent } from './../repo-view/repo-view.component';
 import { DisplayReposComponent } from './../display-repos/display-repos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router/src/config';
-DisplayReposComponent
+  
 
 const routes: Routes =[
   {
     path: "", 
-    component: DisplayReposComponent, pathMatch: 'full'
+    component: SelectOrganizationComponent, pathMatch: 'full'
+},  
+{
+  path: ":id/repositories", 
+  component: DisplayReposComponent
 },
-
-  { path: 'viewRepo/:repoUrl', component: RepoViewComponent},
 
 
 {path: '**', component: NotFoundComponent} 

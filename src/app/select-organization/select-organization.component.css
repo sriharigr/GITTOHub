@@ -9,7 +9,7 @@ label{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 10px;   
     font-weight: lighter;  
-    color: red; 
+    color: red;  
     } 
     .organization-search{
         position: relative;
@@ -21,3 +21,7 @@ label{
         /* left: 20em;   */
     }
       
+    app-trending-repos{
+        position: relative;
+        top: 6em;  
+    }

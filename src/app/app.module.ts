@@ -21,7 +21,8 @@ import {MatBottomSheetRef} from '@angular/material';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SelectOrganizationComponent } from './select-organization/select-organization.component';
 import {Pipe, PipeTransform} from '@angular/core';
-   
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [  
     AppComponent,
@@ -44,8 +45,8 @@ import {Pipe, PipeTransform} from '@angular/core';
     MatInputModule,
     MatFormFieldModule,
     MatProgressBarModule,
-    MatBottomSheetModule,
-   
+    MatBottomSheetModule, 
+    MatRadioModule
   ],
   entryComponents: [
     RepoBottomsheetComponent

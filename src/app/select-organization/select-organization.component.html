@@ -3,7 +3,7 @@
   <label class="randomString">Please type Organization Name</label><br>
   <div class="orgs-type col-md-12">  
     <mat-form-field class="col-md-7">  
-        <input type="text" matInput name="Organization" placeholder="e.g. Google, Facebook" required [(ngModel)]="orgsName">
+        <input type="text" autofocus   matInput name="Organization" placeholder="e.g. Google, Facebook" required [(ngModel)]="orgsName">
     </mat-form-field>
     <br>
     <div class="col-md-3">
@@ -16,18 +16,11 @@
       <br>
       <label for="">* Powered by GitHub <i class="fa fa-github"></i></label>
 </div>
+  
 
-<div class="top-repos-topic-based">
-  <div class="repos col-md-4">
-    <div class="topic-repo-js row">
-      <h6 *ngFor=""></h6>
-    </div>    
-  </div>
-</div>
-
-<div class="orgs-details" align="center" *ngIf="noOrgs==false">  
+<div class="orgs-details" align="center" *ngIf="noOrgs==false">
     <mat-card class="example-card col-md-5" >
-        <mat-card-header>
+        <mat-card-header>  
           <div mat-card-avatar class="example-header-image">
               <img src="{{orgsImgUrl}}"  width="auto" height="35" class="d-inline-block align-top" alt="">
           </div>

@@ -12,10 +12,9 @@ export class SelectOrganizationComponent implements OnInit {
   organization: string = "";
   noOrgs: boolean = null;  
   orgsImgUrl="";     
-  orgsName="";
+  orgsName: string='';
   orgsData: Object;
   validResponse: boolean = false;
-  repoTopics: Object[] = [];
   constructor(private repoService: RepoServiceService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,28 +24,29 @@ export class SelectOrganizationComponent implements OnInit {
         this.search();
        }
       }
-      this.repoService.topicsData.subscribe((response)=>{
-      this.repoTopics = response;
-      });
+  
   }
 search(){
-  this.validResponse = false;
-  this.repoService.getOrgsData(this.orgsName).subscribe((response: any)=>{
-    if(response){
-          this.orgsImgUrl = response.avatar_url;
-          this.orgsData = response;
-          this.noOrgs = false;
-          this.repoService.orgsData.next(response);
-          this.validResponse = true; 
-          this.router.navigate(['org', this.orgsName]);
-    }
-  },(err)=>{
-    if(err){
-      if(err.status==404){
-        this.noOrgs = true;
+  if(this.orgsName!=undefined && this.orgsName!=''){
+    this.validResponse = false;
+    this.repoService.getOrgsData(this.orgsName).subscribe((response: any)=>{
+      if(response){
+            this.orgsImgUrl = response.avatar_url;
+            this.orgsData = response;
+            this.noOrgs = false;
+            this.repoService.orgsData.next(response);
+            this.validResponse = true; 
+            this.router.navigate(['org', this.orgsName]);
       }
-    }
-  })
+    },(err)=>{
+      if(err){
+        if(err.status==404){
+          this.noOrgs = true;
+        }
+      }
+    })
+  }
+
 }
 viewRepositories(){
   this.router.navigate([this.orgsName+'/repositories']);
@@ -60,7 +60,5 @@ viewUsers(){
 
 }
 
-getTopicBasedRepos(){
 
-}
 }
